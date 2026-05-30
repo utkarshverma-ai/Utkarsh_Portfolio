@@ -1,65 +1,87 @@
-# My Portfolio Website - Overview 🚀
+# Utkarsh Verma — Personal Portfolio 🚀
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+My personal portfolio website built with React, TypeScript, GSAP, Three.js, and WebGL.  
+Live at: **[utkarshportfolio-three.vercel.app](https://utkarshportfolio-three.vercel.app/)**
 
 ---
 
 ## ⚠️ Usage Notice
 
-This project is shared for learning purposes only.
+This project is shared for **learning and inspiration only**.
 
-Please do NOT:
+Please do **NOT**:
 - Clone or replicate the full website or design
 - Repost it with minor content changes
-- Use this project for commercial/client work
+- Use this project for commercial or client work
 - Create tutorials or content using this exact project
 
-If you use parts of the code, you must provide proper credit linking back to the original repository.
+If you use parts of the code, provide proper credit linking back to this repository.
 
-Build your own version — don’t just copy.
+**Build your own version — don't just copy.**
 
-— Moncy Yohannan
-
----
-
-## 🛠️ Instructions
-
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
-
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
+— Utkarsh Verma
 
 ---
 
-## ⚙️ Tech Stack
+## 🛠️ Tech Stack
 
 React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
 
 ---
 
-## 🎨 Assets Usage
+## ⚙️ Getting Started
 
-Some 3D assets included in this repository are free to use for learning purposes.
+```bash
+# Clone the repo
+git clone https://github.com/utkarshverma-ai/portfolio
 
-However:
+# Install dependencies
+npm install
 
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
+# Run locally
+npm run dev
+```
 
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+> ⚠️ **GSAP Notice:** This project uses GSAP Club plugins (trial versions) for local development only.  
+> Trial plugins **cannot** be used for production or hosting.  
+> For official GSAP Club plugins, refer to: [gsap.com/docs/v3/Installation](https://gsap.com/docs/v3/Installation/)
 
 ---
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+## 🎨 Assets
+
+Some 3D assets in this repository are free to use for learning purposes.
+
+However:
+- The original 3D avatar used on the live portfolio is **not included** in this repository
+- It is a custom asset and is **not open source**
+- Any extraction or redistribution of assets from the live site is strictly prohibited
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/        # All section components (Hero, About, Work, Career, etc.)
+├── assets/            # Images and static files
+├── styles/            # Global CSS
+└── main.tsx           # Entry point
+```
+
+---
+
+## 🔗 Connect
+
+- **GitHub:** [github.com/utkarshverma-ai](https://github.com/utkarshverma-ai)
+- **LinkedIn:** [linkedin.com/in/utkarsh-verma-ooo1](https://www.linkedin.com/in/utkarsh-verma-ooo1)
+- **Twitter/X:** [@utkrshvrmx](https://x.com/utkrshvrmx)
+- **Instagram:** [@utkrshvrmx](https://www.instagram.com/utkrshvrmx)
+- **Email:** codexutkarsh@gmail.com
 
 ---
 
 ## 📄 License
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
-
-See the LICENSE file for full details
-
+This project is licensed under the **Personal Portfolio License (PPL) v1.0**.  
+See the `LICENSE` file for full details.
