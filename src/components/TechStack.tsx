@@ -1,8 +1,10 @@
+import "./styles/TechStack.css";
 import * as THREE from "three";
 import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   BallCollider,
   Physics,
@@ -126,6 +128,16 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
+
+  // This section is lazy-loaded and mounts AFTER the Work pin was created,
+  // which changes total page height. Without refreshing, the Work pin reserves
+  // too little space and this section scrolls up over it. Refresh on mount
+  // (and shortly after, once the canvas has laid out) to fix the pin spacing.
+  useEffect(() => {
+    ScrollTrigger.refresh();
+    const t = setTimeout(() => ScrollTrigger.refresh(), 300);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

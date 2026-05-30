@@ -1,5 +1,6 @@
-import { SplitText } from "gsap-trial/SplitText";
+import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { smoother } from "../Navbar";
 
 export function initialFX() {
@@ -11,6 +12,16 @@ export function initialFX() {
     duration: 0.5,
     delay: 1,
   });
+
+  // The page was frozen (overflow hidden + smoother paused) while the loader
+  // was up, so every ScrollTrigger/pin was measured against a stale layout.
+  // Now that scrolling is live, recompute all trigger positions. Re-run once
+  // more after web fonts settle, since the Geist font shifts element widths
+  // and changes the Work pin's scroll distance.
+  ScrollTrigger.refresh();
+  if (document.fonts) {
+    document.fonts.ready.then(() => ScrollTrigger.refresh());
+  }
 
   var landingText = new SplitText(
     [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
@@ -62,7 +73,7 @@ export function initialFX() {
     }
   );
   gsap.fromTo(
-    [".header", ".icons-section", ".nav-fade"],
+    [".header", ".icons-section", ".nav-fade", ".landing-cta"],
     { opacity: 0 },
     {
       opacity: 1,

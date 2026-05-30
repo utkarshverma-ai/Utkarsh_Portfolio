@@ -19,7 +19,7 @@
   position: fixed;
   width: 300px;
   height: 300px;
-  background-color: #fb8dff;
+  background-color: var(--accentGlow);
   box-shadow: inset -50px 40px 50px rgba(84, 0, 255, 0.6);
   filter: blur(60px);
   border-radius: 50%;
@@ -58,7 +58,7 @@
   display: none;
   width: 300px;
   height: 300px;
-  background-color: #fb8dff;
+  background-color: var(--accentGlow);
   box-shadow: inset -50px 40px 50px rgba(84, 0, 255, 0.6);
   filter: blur(50px);
   border-radius: 50%;
@@ -87,7 +87,7 @@
   width: 400px;
   height: 400px;
   z-index: 1;
-  background-color: #f59bf8;
+  background-color: var(--accentGlow);
   transform: translate(-50%, 36%) scaleX(1.4);
   box-shadow: inset 66px 35px 85px 0px rgba(85, 0, 255, 0.65);
   filter: blur(50px);
@@ -217,7 +217,7 @@
   top: 0;
 }
 h2.landing-info-h2 {
-  color: #c481ff;
+  color: var(--accentColor);
   font-size: 42px;
   width: 120%;
   margin: 0;
@@ -355,4 +355,66 @@ h2.landing-info-h2 {
   h2.landing-info-h2 {
     font-size: 75px;
   }
+}
+
+/* Hero call-to-action links: built from the same text + arrow pattern used by
+   the contact-social links, with the HoverLinks text-swap effect. */
+.landing-cta {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.landing-cta a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ccc;
+  transition: 0.3s;
+}
+.landing-cta a:hover {
+  color: var(--accentColor);
+  border-color: var(--accentColor);
+}
+.landing-cta a svg {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+.landing-cta a:hover svg {
+  transform: translate(2px, -2px);
+}
+@media screen and (min-width: 768px) {
+  .landing-cta a {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .landing-cta {
+    margin-top: 40px;
+  }
+  .landing-cta a {
+    font-size: 20px;
+  }
+}
+
+/* Keep the CTA links clickable above the fixed 3D character layer.
+   The whole #smooth-content sits below the fixed .character-model (z-index 11),
+   so the transparent character layer was swallowing the CTA clicks. Making the
+   character container transparent to pointer events lets clicks reach the CTAs,
+   while the small face-hover area keeps its eyebrow-raise interaction. The
+   character canvas is already pointer-events:none and head tracking listens on
+   document, so neither is affected. */
+.character-container {
+  pointer-events: none;
+}
+.character-hover {
+  pointer-events: auto;
+}
+.landing-cta {
+  position: relative;
+  z-index: 12;
 }

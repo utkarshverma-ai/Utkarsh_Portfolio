@@ -1,0 +1,59 @@
+/*
+ * TechStack section
+ * --------------------------------------------------------------------------
+ * The R3F <Canvas> ships with inline defaults (position:relative; width/height
+ * 100%; overflow:hidden) and NO z-index. Without an explicit container the
+ * canvas painted on top of the section heading and bled into the neighbouring
+ * Contact section through the old negative margin. The rules below give the
+ * section its own stacking context (isolation:isolate), clip the canvas to the
+ * section box (overflow:hidden), and order the layers explicitly with z-index.
+ */
+
+.techstack {
+  position: relative;
+  isolation: isolate; /* contain z-index war-games to this section only */
+  width: 100%;
+  height: var(--vh);
+  margin: 50px auto 0; /* removed the -100px bottom margin that overlapped Contact */
+  overflow: hidden; /* clip the 3D canvas to the section bounds */
+}
+
+/* Heading sits above the canvas */
+.techstack h2 {
+  position: absolute;
+  top: clamp(60px, 12vh, 120px);
+  left: 0;
+  z-index: 2; /* above .tech-canvas */
+  width: 100%;
+  margin: 0;
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none; /* let pointer interactions fall through to the canvas */
+}
+
+/* The R3F canvas wrapper: pin it inside the section and keep it behind text */
+.tech-canvas {
+  position: absolute !important;
+  inset: 0; /* fill the relative .techstack parent, never overflow it */
+  z-index: 1;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Safety net: the inner <canvas> element should never exceed its wrapper */
+.tech-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  touch-action: pan-y; /* allow vertical page scroll to start over the canvas */
+}
+
+@media screen and (max-width: 900px) {
+  .techstack h2 {
+    top: clamp(40px, 10vh, 90px);
+  }
+}

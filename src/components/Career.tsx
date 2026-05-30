@@ -15,43 +15,32 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Full Stack Web Developer Intern</h4>
+                <h5>Digital Universe &middot; Remote</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>Present</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              June 2026 – November 2026 (Present). Assisting in full-stack web
+              application development on live projects, supporting both
+              front-end and back-end development tasks, and reporting directly
+              to management while contributing to active development cycles.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>AWS Cloud Computing Intern</h4>
+                <h5>JOVAC &middot; Remote</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
-              </div>
-              <h3>NOW</h3>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              June 2024 – August 2024. Worked hands-on with AWS core services
+              including EC2, S3, IAM, VPC, Lambda, and CloudWatch. Implemented
+              Load Balancing and Auto Scaling for cloud infrastructure setups
+              and gained practical experience in cloud architecture and
+              deployment pipelines.
             </p>
           </div>
         </div>

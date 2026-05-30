@@ -19,9 +19,49 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   --accentColor: #c2a4ff;
+  --accentRGB: 194, 164, 255;
+  --accentBright: #7f40ff;
+  --accentGlow: #fb8dff;
   --backgroundColor: #0b080c;
   --vh: 100vh;
   --vh: 100svh;
+}
+
+/*
+ * Color themes. The default (purple) matches the original design exactly.
+ * Each theme only swaps the accent family; the dark background stays the same
+ * so the 3D scene, lighting and contrast remain consistent. The active theme
+ * is set via data-theme on <html> by the ThemeSwitcher component.
+ */
+[data-theme="violet"] {
+  --accentColor: #c2a4ff;
+  --accentRGB: 194, 164, 255;
+  --accentBright: #7f40ff;
+  --accentGlow: #fb8dff;
+}
+[data-theme="cyan"] {
+  --accentColor: #8be9ff;
+  --accentRGB: 139, 233, 255;
+  --accentBright: #1ba8ff;
+  --accentGlow: #6ad8ff;
+}
+[data-theme="emerald"] {
+  --accentColor: #8affc1;
+  --accentRGB: 138, 255, 193;
+  --accentBright: #18c47c;
+  --accentGlow: #6affb0;
+}
+[data-theme="amber"] {
+  --accentColor: #ffd28a;
+  --accentRGB: 255, 210, 138;
+  --accentBright: #ff9d1b;
+  --accentGlow: #ffb84d;
+}
+[data-theme="rose"] {
+  --accentColor: #ff9ec2;
+  --accentRGB: 255, 158, 194;
+  --accentBright: #ff2f7e;
+  --accentGlow: #ff6aa3;
 }
 h1,
 h2,
@@ -91,33 +131,10 @@ body {
   flex-wrap: nowrap;
 }
 
-.techstack {
-  width: 100%;
-  position: relative;
-  height: var(--vh);
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: -100px;
-}
-
-.techstack h2 {
-  font-size: 80px;
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 120px;
-  left: 0;
-  font-weight: 400;
-  text-transform: uppercase;
-}
+/* TechStack section/canvas styles moved to src/components/styles/TechStack.css */
 
 @media screen and (min-width: 768px) {
   body {
     --cWidth: 94%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .techstack h2 {
-    font-size: 40px;
   }
 }

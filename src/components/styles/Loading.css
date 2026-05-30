@@ -70,7 +70,7 @@
   overflow: visible;
 }
 .loading-hover {
-  background-color: #a87cff;
+  background-color: var(--accentColor);
   width: 250px;
   height: 120px;
   position: absolute;
@@ -198,6 +198,20 @@
   font-size: 14px;
   letter-spacing: 0.2px;
 }
+.loader-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* Color-adapted variant for the light loading screen: the logo is a
+     light-purple mark on a near-black tile, which would read as a harsh box on
+     the light (#eae5ec) background. Presenting it as a rounded dark chip keeps
+     the original logo colors while making the dark tile look intentional. */
+  padding: 6px 10px;
+  border-radius: 12px;
+  background-color: #0b080c;
+  box-shadow: 0px 4px 14px rgba(var(--accentRGB), 0.35);
+}
 @keyframes blink {
   0% {
     opacity: 0;
@@ -272,7 +286,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #a87cff;
+  background-color: var(--accentColor);
   animation: ball25 7s infinite;
   transform: translateY(10px);
   animation-timing-function: cubic-bezier(0.3, 1.18, 0.63, 1.28);
@@ -352,6 +366,9 @@
   .loader-title {
     font-size: 16px;
   }
+  .loader-logo {
+    height: 38px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .loading-header {
@@ -359,5 +376,8 @@
   }
   .loader-title {
     font-size: 18px;
+  }
+  .loader-logo {
+    height: 44px;
   }
 }
